@@ -1,0 +1,27 @@
+name: Demo GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show repository files
+        run: ls
+
+      - name: Print HTML file names
+        run: |
+          echo "Files in this repo:"
+          echo "index.html"
+          echo "index2.html"
+          echo "index3.html"
+
+      - name: Simple success message
+        run: echo "🎉 GitHub Action ran successfully!"
